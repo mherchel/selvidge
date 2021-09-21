@@ -1,0 +1,9 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: var(--sp4) 0;
+}
+
+.site-header__logo {
+
+}

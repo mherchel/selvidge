@@ -1,0 +1,15 @@
+.site-testimonials {
+  min-height: 200px;
+  background-color: var(--blue-70);
+}
+
+.site-testimonials__container {
+  position: relative;
+}
+
+.site-testimonials__face-photo {
+  position: absolute;
+  bottom: 100%;
+  right: var(--sp);
+  width: 50%;
+}

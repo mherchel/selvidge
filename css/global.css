@@ -1,0 +1,25 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Tahoma, sans‑serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea {
+  max-width: 100%;
+}
+
+h2 {
+  margin: var(--sp3) 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+}

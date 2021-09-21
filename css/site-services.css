@@ -1,0 +1,19 @@
+.site-services {
+ padding: var(--sp4);
+}
+
+.site-services__header {
+
+}
+
+.site-services_list {
+  width: 50%;
+  margin-right: auto;
+  font-size: 20px;
+  column-width: 200px;
+  column-gap: var(--sp);
+}
+
+.site-services__list-item {
+  margin: 0 0 var(--sp2);
+}

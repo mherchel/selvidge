@@ -1,0 +1,23 @@
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav__menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__menu-item {
+
+}
+
+.site-nav__menu-link {
+  display: block;
+  padding: var(--sp);
+  color: var(--blue-50);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+}
