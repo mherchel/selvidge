@@ -6,7 +6,7 @@
   padding: var(--sp3) 0;
 }
 
-@media (min-width: 110rem) {
+@media (min-width: 1100px) {
   .site-header {
     justify-content: space-between;
     align-items: center;

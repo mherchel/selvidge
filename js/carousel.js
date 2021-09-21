@@ -1,6 +1,15 @@
 (() => {
   const quoteContainer = document.querySelector('.site-testimonials__list');
   const quotes = Array.from(quoteContainer.querySelectorAll('.site-testimonials__item'));
+  const playPauseButton = document.querySelector('.site-testimonials__pause');
+
+  function isCarouselPaused() {
+    return playPauseButton.getAttribute('aria-pressed') === 'true';
+  }
+
+  function handlePlayPause() {
+    playPauseButton.setAttribute('aria-pressed', !isCarouselPaused());
+  }
 
   /**
    * Transition the quote.
@@ -39,11 +48,16 @@
   function init() {
     transitionQuote(0);
     setInterval(() => {
-      const current = quoteContainer.querySelector('.is-active');
-      const index = quotes.indexOf(current);
 
-      transitionQuote(index + 1);
+      if (!isCarouselPaused()) {
+        const current = quoteContainer.querySelector('.is-active');
+        const index = quotes.indexOf(current);
+        transitionQuote(index + 1);
+      }
+
     }, 6000);
+
+    playPauseButton.addEventListener('click', handlePlayPause);
   }
 
   init();
