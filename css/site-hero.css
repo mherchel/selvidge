@@ -26,19 +26,31 @@
   text-align: center;
   color: white;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 24px;
+}
+
+@media (min-width: 800px) {
+  .site-hero__cta {
+    font-size: 30px;
+  }
 }
 
 .site-hero__cta-link {
   display: block;
   margin-bottom: 5px;
-  padding: var(--sp2) var(--sp5);
+  padding: var(--sp) var(--sp2);
   border: solid 1px white;
   border-radius: 10px;
   background-color: var(--green-40);
   text-transform: uppercase;
   text-decoration: none;
   color: inherit;
+}
+
+@media (min-width: 800px) {
+  .site-hero__cta-link {
+    padding: var(--sp2) var(--sp5);
+  }
 }
 
 .site-hero__cta-phone {

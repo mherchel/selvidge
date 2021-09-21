@@ -1,5 +1,5 @@
 .site-nav {
-  margin-left: auto;
+  margin: var(--sp1) 0
 }
 
 .site-nav__menu {
@@ -15,9 +15,22 @@
 
 .site-nav__menu-link {
   display: block;
-  padding: var(--sp);
+  padding: var(--sp2) 5px;
   color: var(--blue-50);
   text-decoration: none;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
+}
+
+@media (min-width: 400px) {
+  .site-nav__menu-link {
+    padding: var(--sp2) var(--sp);
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 500px) {
+  .site-nav__menu-link {
+    font-size: 24px;
+  }
 }
