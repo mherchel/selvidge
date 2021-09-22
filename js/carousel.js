@@ -2,6 +2,10 @@
   const quoteContainer = document.querySelector('.site-testimonials__list');
   const quotes = Array.from(quoteContainer.querySelectorAll('.site-testimonials__item'));
   const playPauseButton = document.querySelector('.site-testimonials__pause');
+  const carouselControlsContainer = document.querySelector('.site-testimonials__controls');
+  const carouselTimerDelay = 6000;
+  const buttonContainer = document.querySelector('.site-testimonials__controls');
+  let carouselTimer;
 
   /**
    * Is the carousel currently paused?
@@ -51,6 +55,14 @@
   }
 
   /**
+   * Restarts the carousel timer.
+   */
+  function restartCarouselTimer() {
+    clearInterval(carouselTimer);
+    carouselTimer = setInterval(incrementCarouselSlide, carouselTimerDelay)
+  }
+
+  /**
    * Set the min-height on the quotes containing element.
    *
    * @param {element} quoteContainer - containing element of quote.
@@ -61,16 +73,19 @@
   }
 
   /**
-   * Transition the quote.
+   * Transition the slide and active control button.
    * @param {number} toQuoteIndex
    */
   function transitionQuote(toQuoteIndex) {
     quotes.forEach(el => {
       el.setAttribute('aria-hidden', 'true');
+      el.setAttribute('tabindex', '-1');
       el.classList.remove('is-active');
       el.classList.remove('is-prev');
       el.classList.remove('is-next');
     });
+
+    const buttons = buttonContainer.querySelectorAll('.site-testimonials__control-button');
 
     let currentQuoteIndex = toQuoteIndex;
     if (currentQuoteIndex > quotes.length - 1) {
@@ -92,6 +107,34 @@
 
     quotes[currentQuoteIndex].classList.add('is-active');
     quotes[currentQuoteIndex].removeAttribute('aria-hidden');
+    quotes[currentQuoteIndex].removeAttribute('tabindex');
+
+    buttons.forEach(el => el.setAttribute('aria-current', 'false'));
+    buttons[currentQuoteIndex].setAttribute('aria-current', 'true');
+  }
+
+  /**
+   * Gets triggered by clicks on the carousel controls.
+   * @param {Event} e - The event object
+   */
+  function handleControlClick(e) {
+    if (e.target.matches('.site-testimonials__control-button')) {
+      const buttons = Array.from(buttonContainer.querySelectorAll('.site-testimonials__control-button'));
+      const clickedIndex = buttons.indexOf(e.target);
+      transitionQuote(clickedIndex);
+      restartCarouselTimer();
+    }
+  }
+
+  /**
+   * Increments the carousel slide by 1.
+   */
+  function incrementCarouselSlide() {
+    if (!isCarouselPaused()) {
+      const current = quoteContainer.querySelector('.is-active');
+      const index = quotes.indexOf(current);
+      transitionQuote(index + 1);
+    }
   }
 
   /**
@@ -100,18 +143,13 @@
   function init() {
     setQuoteMinHeight(quoteContainer, quotes)
     transitionQuote(0);
-    setInterval(() => {
-
-      if (!isCarouselPaused()) {
-        const current = quoteContainer.querySelector('.is-active');
-        const index = quotes.indexOf(current);
-        transitionQuote(index + 1);
-      }
-
-    }, 6000);
+    carouselTimer = setInterval(incrementCarouselSlide, carouselTimerDelay);
 
     playPauseButton.addEventListener('click', handlePlayPause);
     if (!shouldCarouselAutoplay()) playPauseButton.click();
+
+    carouselControlsContainer.addEventListener('click', handleControlClick);
+
     window.addEventListener('resize', () => {
       setQuoteMinHeight(quoteContainer, quotes);
     });
