@@ -8,6 +8,23 @@
   let carouselTimer;
 
   /**
+   * Creates a little control dot for each quote.
+   */
+  function initializeControls() {
+    const controls = quotes.map((el, i) => {
+      return `
+        <li class="site-testimonials__control-item">
+          <button class="site-testimonials__control-button">
+            <span class="visually-hidden">Go to Slide ${i + 1}</span>
+          </button>
+        </li>
+      `
+    }).join('');
+
+    buttonContainer.innerHTML = controls;
+  }
+
+  /**
    * Is the carousel currently paused?
    * @returns boolean
    */
@@ -141,6 +158,7 @@
    * Initialize everything.
    */
   function init() {
+    initializeControls();
     setQuoteMinHeight(quoteContainer, quotes);
     transitionQuote(0);
     carouselTimer = setInterval(autoIncrementCarouselSlide, carouselTimerDelay);
