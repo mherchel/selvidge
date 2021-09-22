@@ -58,5 +58,6 @@
   }
 }
 
-.site-hero__cta-phone {
+.site-hero__cta-phone a {
+  color: inherit; /* For when mobile phones auto link the phone number. */
 }

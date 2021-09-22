@@ -9,10 +9,6 @@
   list-style: none;
 }
 
-.site-nav__menu-item {
-
-}
-
 .site-nav__menu-link {
   display: block;
   padding: var(--sp2) 0.5rem;
