@@ -1,0 +1,27 @@
+.site-photos {
+  padding: var(--sp8) 0;
+}
+
+.site-photos__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: var(--sp3);
+}
+
+.site-photos__item {
+  margin: 0;
+  padding: 0;
+}
+
+.site-photos__link {
+  display: block;
+}
+
+.site-photos__thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
