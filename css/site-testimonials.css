@@ -28,7 +28,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 300px; /* @todo */
+  height: var(--max-quote-height, 30rem);
   overflow: hidden;
 }
 

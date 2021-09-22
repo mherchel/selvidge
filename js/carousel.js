@@ -3,12 +3,45 @@
   const quotes = Array.from(quoteContainer.querySelectorAll('.site-testimonials__item'));
   const playPauseButton = document.querySelector('.site-testimonials__pause');
 
+  /**
+   * Is the carousel currently paused?
+   * @returns boolean
+   */
   function isCarouselPaused() {
     return playPauseButton.getAttribute('aria-pressed') === 'true';
   }
 
+  /**
+   * Toggles automatic playing of the carousel.
+   */
   function handlePlayPause() {
     playPauseButton.setAttribute('aria-pressed', !isCarouselPaused());
+  }
+
+  /**
+   * Gets the max height of all the quotes.
+   *
+   * @param {Array} quotes - array of list items containing quotes.
+   * @returns number
+   */
+  function GetMaxQuoteHeight(quotes) {
+    let maxHeight = 300;
+    quotes.forEach(quote => {
+      const height = quote.querySelector('.site-testimonials__quote-quote').clientHeight;
+      maxHeight = height > maxHeight ? height : maxHeight;
+    });
+
+    return maxHeight;
+  }
+
+  /**
+   * Set the min-height on the quotes containing element.
+   *
+   * @param {element} quoteContainer - containing element of quote.
+   * @param {Array} quotes - array of list items containing quotes.
+   */
+  function setQuoteMinHeight(quoteContainer, quotes) {
+    quoteContainer.style.setProperty('--max-quote-height', GetMaxQuoteHeight(quotes) + 'px');
   }
 
   /**
@@ -45,7 +78,11 @@
     quotes[currentQuoteIndex].removeAttribute('aria-hidden');
   }
 
+  /**
+   * Initialize everything.
+   */
   function init() {
+    setQuoteMinHeight(quoteContainer, quotes)
     transitionQuote(0);
     setInterval(() => {
 
@@ -58,6 +95,9 @@
     }, 6000);
 
     playPauseButton.addEventListener('click', handlePlayPause);
+    window.addEventListener('resize', () => {
+      setQuoteMinHeight(quoteContainer, quotes);
+    });
   }
 
   init();
