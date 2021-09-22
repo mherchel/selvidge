@@ -59,7 +59,7 @@
    */
   function restartCarouselTimer() {
     clearInterval(carouselTimer);
-    carouselTimer = setInterval(incrementCarouselSlide, carouselTimerDelay)
+    carouselTimer = setInterval(autoIncrementCarouselSlide, carouselTimerDelay)
   }
 
   /**
@@ -127,9 +127,9 @@
   }
 
   /**
-   * Increments the carousel slide by 1.
+   * Increments the carousel slide by 1 if not paused.
    */
-  function incrementCarouselSlide() {
+  function autoIncrementCarouselSlide() {
     if (!isCarouselPaused()) {
       const current = quoteContainer.querySelector('.is-active');
       const index = quotes.indexOf(current);
@@ -141,9 +141,9 @@
    * Initialize everything.
    */
   function init() {
-    setQuoteMinHeight(quoteContainer, quotes)
+    setQuoteMinHeight(quoteContainer, quotes);
     transitionQuote(0);
-    carouselTimer = setInterval(incrementCarouselSlide, carouselTimerDelay);
+    carouselTimer = setInterval(autoIncrementCarouselSlide, carouselTimerDelay);
 
     playPauseButton.addEventListener('click', handlePlayPause);
     if (!shouldCarouselAutoplay()) playPauseButton.click();
@@ -153,6 +153,8 @@
     window.addEventListener('resize', () => {
       setQuoteMinHeight(quoteContainer, quotes);
     });
+
+    quoteContainer.classList.add('is-initialized');
   }
 
   init();

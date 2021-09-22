@@ -45,7 +45,16 @@
   align-items: center;
   color: white;
   opacity: 0;
+}
+
+.is-initialized.is-initialized .site-testimonials__item {
   transition: transform 0.3s, opacity 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-initialized.is-initialized .site-testimonials__item {
+    transition: opacity 0.2s;
+  }
 }
 
 .site-testimonials__item.is-prev {
