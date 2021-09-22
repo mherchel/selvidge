@@ -43,7 +43,8 @@
 }
 
 .site-photos__link:focus {
-  outline-offset: 3px;
+  outline-offset: 4px;
+  outline-width: 3px;
 }
 
 .site-photos__thumb {
@@ -62,4 +63,9 @@
 
 .glightbox-container .gslide {
   user-select: auto;
+}
+
+.gbtn.focused {
+  --focus-ring-color: white;
+  outline: solid 2px var(--focus-ring-color);
 }

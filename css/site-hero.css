@@ -36,6 +36,8 @@
 }
 
 .site-hero__cta-link {
+  --focus-ring-color: white;
+
   display: block;
   margin-bottom: 0.5rem;
   padding: var(--sp) var(--sp2);

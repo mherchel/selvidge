@@ -1,4 +1,6 @@
 .site-testimonials {
+  --focus-ring-color: white;
+
   position: relative; /* Anchor playPause button */
   min-height: 20rem;
   background-color: var(--blue-70);
@@ -178,3 +180,34 @@
   border-right: 0;
   border-bottom: solid 1rem transparent;
 }
+
+.site-testimonials__controls {
+  position: absolute;
+  left: 0;
+  bottom: var(--sp2);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-testimonials__control-item {
+  margin: 0 0 0 1rem;
+  padding: 0;
+}
+
+.site-testimonials__control-button {
+  display: block;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  background-color: #ffffff66;
+  border: 0;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.site-testimonials__control-button[aria-current="true"] {
+  background-color: #ffffff}
