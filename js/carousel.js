@@ -12,10 +12,26 @@
   }
 
   /**
+   * Determines if the carousel should autoplay.
+   *
+   * @returns boolean
+   */
+  function shouldCarouselAutoplay() {
+    const localStorageSaysPlay = localStorage.getItem('carouselAutoplay');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if ((reducedMotion && localStorageSaysPlay !== 'true') || localStorageSaysPlay === 'false') {
+      return false;
+    }
+    return true;
+  }
+
+  /**
    * Toggles automatic playing of the carousel.
    */
   function handlePlayPause() {
     playPauseButton.setAttribute('aria-pressed', !isCarouselPaused());
+    localStorage.setItem('carouselAutoplay', !isCarouselPaused());
   }
 
   /**
@@ -95,6 +111,7 @@
     }, 6000);
 
     playPauseButton.addEventListener('click', handlePlayPause);
+    if (!shouldCarouselAutoplay()) playPauseButton.click();
     window.addEventListener('resize', () => {
       setQuoteMinHeight(quoteContainer, quotes);
     });
