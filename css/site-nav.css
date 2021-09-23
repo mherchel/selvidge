@@ -1,5 +1,5 @@
 .site-nav {
-  margin: var(--sp1) 0
+  margin: var(--sp2) 0
 }
 
 .site-nav__menu {
@@ -36,7 +36,7 @@
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 700px) {
   .site-nav__menu-link {
     padding: var(--sp2);
   }

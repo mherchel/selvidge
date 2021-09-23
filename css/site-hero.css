@@ -21,15 +21,26 @@
 
 .site-hero__cta {
   position: absolute;
-  bottom: var(--sp3);
-  left: var(--sp3);
+  bottom: 50%;
+  left: 50%;
+  width: max-content;
+  transform: translate(-50%, 50%);
   text-align: center;
   color: white;
   font-weight: 700;
   font-size: 2.4rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 500px) {
+  .site-hero__cta {
+    position: absolute;
+    bottom: var(--sp3);
+    left: var(--sp3);
+    transform: none;
+  }
+}
+
+@media (min-width: 700px) {
   .site-hero__cta {
     font-size: 3rem;
   }

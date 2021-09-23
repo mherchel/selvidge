@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: var(--sp3) 0;
+  padding: var(--sp3) 0 0;
 }
 
 @media (min-width: 1100px) {
