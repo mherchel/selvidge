@@ -11,7 +11,7 @@
 
 @media (min-width: 750px) {
   .site-services {
-    padding: var(--sp4);
+    padding: var(--sp6) var(--sp4);
   }
 }
 
@@ -29,8 +29,11 @@
   }
 }
 
+.site-services__header {
+  margin-top: 0;
+}
+
 .site-services_list {
-  font-size: 2rem;
   column-width: 20rem;
   column-gap: var(--sp3);
 }
@@ -43,5 +46,13 @@
 }
 
 .site-services__list-item {
-  margin: 0 0 var(--sp2);
+  margin: 0 0 var(--sp);
+  font-size: 1.8rem;
+}
+
+@media (min-width: 550px) {
+  .site-services__list-item {
+    margin-bottom: var(--sp2);
+    font-size: 2rem;
+  }
 }

@@ -46,7 +46,6 @@
 .site-testimonials__item.is-prev {
   display: flex;
   transform: translatey(-100%);
-
 }
 
 .site-testimonials__item.is-active {
@@ -123,15 +122,15 @@
 }
 
 .site-testimonials_img {
-  width: 7.5rem;
-  height: 7.5rem;
+  display: none;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
 }
 
 @media (min-width: 400px) {
   .site-testimonials_img {
-    width: 10rem;
-    height: 10rem;
+    display: block;
   }
 }
 

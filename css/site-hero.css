@@ -46,6 +46,8 @@
 
 @media (min-width: 700px) {
   .site-hero__cta {
+    bottom: var(--sp4);
+    left: var(--sp5);
     font-size: 3rem;
   }
 }

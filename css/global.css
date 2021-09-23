@@ -31,9 +31,15 @@ textarea {
 
 h2 {
   margin: var(--sp3) 0;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   color: black;
+}
+
+@media (min-width: 600px) {
+  h2 {
+    font-size: 4rem;
+  }
 }
 
 .visually-hidden {

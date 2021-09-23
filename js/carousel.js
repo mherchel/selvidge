@@ -64,7 +64,7 @@
   function GetMaxQuoteHeight(quotes) {
     let maxHeight = 300;
     quotes.forEach(quote => {
-      const height = quote.querySelector('.site-testimonials__quote-quote').clientHeight;
+      const height = quote.querySelector('.site-testimonials__quote').clientHeight;
       maxHeight = height > maxHeight ? height : maxHeight;
     });
 
