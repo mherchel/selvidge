@@ -1,12 +1,17 @@
 .site-hero {
   position: relative; /* anchor hero image. */
-  height: 50rem;
+  aspect-ratio: 2 / 1;
 }
 
-@supports (aspect-ratio: 2 / 1) {
+@supports not (aspect-ratio: 2 / 1) {
   .site-hero {
-    height: revert;
-    aspect-ratio: 2 / 1;
+    height: 60vw;
+  }
+
+  @media (min-width: 700px) {
+    .site-hero {
+      height: 50rem;
+    }
   }
 }
 
@@ -33,7 +38,6 @@
 
 @media (min-width: 500px) {
   .site-hero__cta {
-    position: absolute;
     bottom: var(--sp3);
     left: var(--sp3);
     transform: none;
@@ -69,6 +73,10 @@
   .site-hero__cta-link {
     padding: var(--sp2) var(--sp5);
   }
+}
+
+.site-hero__cta-phone {
+  text-shadow: 3px 3px #333333;
 }
 
 .site-hero__cta-phone a {

@@ -11,7 +11,7 @@
 
 .site-nav__menu-link {
   display: block;
-  padding: var(--sp2) 0.5rem;
+  padding: var(--sp) 0.5rem;
   color: var(--blue-50);
   text-decoration: none;
   font-weight: 700;
