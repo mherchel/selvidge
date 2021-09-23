@@ -57,8 +57,17 @@
 /*
  * Lightbox CSS overrides
  */
+
+.glightbox-mobile .glightbox-container .gslide-desc {
+  color: white;
+}
+
+.glightbox-mobile .glightbox-container .gslide-desc .desc-more {
+  opacity: 1;
+}
+
 .glightbox-clean .gslide-desc {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .glightbox-container .gslide {

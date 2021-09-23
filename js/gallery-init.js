@@ -3,95 +3,91 @@ const thumbsPath = '/gallery/thumbs/';
 const images = [
   {
     filename: '1.jpg',
-    desc: 'this is my tests',
+    desc: 'Kitchen counter and backsplash',
   },
   {
     filename: '2.jpg',
-    desc: '',
+    desc: 'Kitchen counter installation.',
   },
   {
     filename: '3.jpg',
-    desc: '',
+    desc: 'Carpentry work.',
   },
   {
     filename: '4.jpg',
-    desc: '',
+    desc: 'Backsplash installation.',
   },
   {
     filename: '6.jpg',
-    desc: '',
+    desc: 'Range hood installation.',
   },
   {
     filename: '7.jpg',
-    desc: '',
+    desc: 'Schematic drawing for a chimney cover.',
   },
   {
     filename: '8.jpg',
-    desc: '',
+    desc: 'Fireplace revamp',
   },
   {
     filename: '9.jpg',
-    desc: '',
+    desc: 'Attached shed construction showing framing.',
   },
   {
     filename: '10.jpg',
-    desc: '',
+    desc: 'Attached shed construction showing siding installation.',
   },
   {
     filename: '11.jpg',
-    desc: '',
+    desc: 'Doug and Jeremy next to a Selvidge and Sons yard sign.',
   },
   {
     filename: '12.jpg',
-    desc: '',
+    desc: 'Bathroom detail showing tilework and bathtub.',
   },
   {
     filename: '13.jpg',
-    desc: '',
+    desc: 'Bathroom work showing walk in shower.',
   },
   {
     filename: '14.jpg',
-    desc: '',
+    desc: 'More bathroom wall work including inset and tile work.',
   },
   {
     filename: '15.jpg',
-    desc: '',
+    desc: 'Walk in shower detail showing tile work and bench.',
   },
   {
     filename: '16.jpg',
-    desc: '',
+    desc: 'More walk in shower details.',
   },
   {
     filename: '18.jpg',
-    desc: '',
+    desc: 'Doug and Jeremy doing drywall/sheetrock work.',
   },
   {
     filename: '19.jpg',
-    desc: '',
+    desc: 'Bathroom floor tile installation.',
   },
   {
     filename: '21.jpg',
-    desc: '',
+    desc: 'Bathroom floating vanity installation.',
   },
   {
     filename: '23.jpg',
-    desc: '',
+    desc: 'Completed bathroom project.',
   },
   {
     filename: '24.jpg',
-    desc: '',
-  },
-  {
-    filename: '25.jpg',
-    desc: '',
+    desc: 'Sliding glass door replacement.',
   },
   {
     filename: '26.jpg',
-    desc: '',
+    desc: 'In the middle of a room remodel including walls, floor, and ceiling.',
   },
   {
     filename: '27.jpg',
-    desc: '',
+    desc: 'Complete room remodel.',
   },
 ]
 
@@ -103,7 +99,6 @@ const galleryHtml = images.map(item => {
       href="${path + item.filename}"
       class="glightbox site-photos__link"
       data-gallery="site-photos"
-      data-title="${item.filename}"
       data-description="${item.desc}"
       data-desc-position="bottom"
     >
