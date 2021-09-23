@@ -11,20 +11,6 @@
   padding: var(--sp4) 0 ;
 }
 
-.site-testimonials__face-photo {
-  display: none;
-  position: absolute;
-  bottom: 100%;
-  right: var(--sp);
-  width: 50%;
-}
-
-@media (min-width: 750px) {
-  .site-testimonials__face-photo {
-    display: block;
-  }
-}
-
 .site-testimonials__list {
   position: relative;
   margin: 0;
