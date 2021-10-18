@@ -1,5 +1,5 @@
 .site-nav {
-  margin: var(--sp2) 0
+  margin: var(--sp2) 0;
 }
 
 .site-nav__menu {
@@ -20,7 +20,7 @@
 }
 
 .site-nav__menu-link:hover {
-  color: #79A8D2;
+  color: #79a8d2;
 }
 
 @media (min-width: 400px) {

@@ -12,7 +12,7 @@
 }
 
 :where(.site-photos__list:is(:hover, :focus-within)) .site-photos__link {
-  filter: brightness(80%)
+  filter: brightness(80%);
 }
 
 /* This is some Safari 🐮 💩 right here. */

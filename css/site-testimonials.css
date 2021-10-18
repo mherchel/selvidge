@@ -8,7 +8,7 @@
 
 .site-testimonials__container {
   position: relative;
-  padding: var(--sp4) 0 ;
+  padding: var(--sp4) 0;
 }
 
 .site-testimonials__list {
@@ -65,7 +65,7 @@
   margin: 0;
   padding: 0 2rem;
   background-image: url('/img/quote.svg');
-  background-repeat: no-repeat;;
+  background-repeat: no-repeat;
   background-position: top left;
   background-size: 5rem;
 }
@@ -172,7 +172,7 @@
   border-right: solid 0.4rem white;
 }
 
-.site-testimonials__pause[aria-pressed="true"] .site-testimonials__playpause-icon {
+.site-testimonials__pause[aria-pressed='true'] .site-testimonials__playpause-icon {
   width: 0;
   height: 0;
   margin-left: 0.2rem;
@@ -224,5 +224,6 @@
   }
 }
 
-.site-testimonials__control-button[aria-current="true"] {
-  background-color: #ffffff}
+.site-testimonials__control-button[aria-current='true'] {
+  background-color: #ffffff;
+}

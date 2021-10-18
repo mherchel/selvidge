@@ -11,15 +11,17 @@
    * Creates a little control dot for each quote.
    */
   function initializeControls() {
-    const controls = quotes.map((el, i) => {
-      return `
+    const controls = quotes
+      .map((el, i) => {
+        return `
         <li class="site-testimonials__control-item">
           <button class="site-testimonials__control-button">
             <span class="visually-hidden">Go to Slide ${i + 1}</span>
           </button>
         </li>
-      `
-    }).join('');
+      `;
+      })
+      .join('');
 
     buttonContainer.innerHTML = controls;
   }
@@ -76,7 +78,7 @@
    */
   function restartCarouselTimer() {
     clearInterval(carouselTimer);
-    carouselTimer = setInterval(autoIncrementCarouselSlide, carouselTimerDelay)
+    carouselTimer = setInterval(autoIncrementCarouselSlide, carouselTimerDelay);
   }
 
   /**
@@ -111,7 +113,7 @@
 
     let prevQuoteIndex = currentQuoteIndex - 1;
     if (prevQuoteIndex < 0) {
-      prevQuoteIndex = quotes.length - 1
+      prevQuoteIndex = quotes.length - 1;
     }
 
     let nextQuoteIndex = currentQuoteIndex + 1;

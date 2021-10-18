@@ -89,11 +89,11 @@ const images = [
     filename: '27.jpg',
     desc: 'Complete room remodel.',
   },
-]
+];
 
-
-const galleryHtml = images.map(item => {
- return `
+const galleryHtml = images
+  .map(item => {
+    return `
   <li class="site-photos__item">
     <a
       href="${path + item.filename}"
@@ -105,8 +105,9 @@ const galleryHtml = images.map(item => {
       <img class="site-photos__thumb" src="${thumbsPath + item.filename}" alt="${item.desc}" loading="lazy" />
     </a>
   </li>
- `
-}).join('');
+ `;
+  })
+  .join('');
 
 document.querySelector('.site-photos__list').innerHTML = galleryHtml;
 
