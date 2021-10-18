@@ -1,0 +1,23 @@
+{
+  "name": "selvidge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mherchel/selvidge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mherchel/selvidge/issues"
+  },
+  "homepage": "https://github.com/mherchel/selvidge#readme",
+  "devDependencies": {
+    "prettier": "^2.4.1",
+    "prettier-airbnb-config": "^1.0.0"
+  }
+}
